@@ -1,2 +1,10 @@
 # leaflet-challenge
-Week 17 homework
+
+
+Welcome to the United States Geological Survey, or USGS for short! The USGS is responsible for providing scientific data about natural hazards, the health of our ecosystems and environment; and the impacts of climate and land-use change. Their scientists develop new methods and tools to supply timely, relevant, and useful information about the Earth and its processes.
+
+The following website will display the location, magnitude and depth of earthquakes that have occured within the last 7 days.
+
+Earthquakes with higher magnitudes should appear larger and earthquakes with greater depth should appear darker in color.
+
+![alt text](https://media.giphy.com/media/JTlgjYDcYIr9CSGxOF/giphy.gif)
