@@ -82,7 +82,7 @@ function createMap(earthquakes, data) {
       // add circles to map
       L.circle([earthdata.geometry.coordinates[1], earthdata.geometry.coordinates[0]], {
         fillOpacity: .8,
-        color: "black",
+        color: color,
         fillColor: color,
         // Adjust radius
         radius: earthdata.properties.mag * 20000
@@ -95,7 +95,29 @@ function createMap(earthquakes, data) {
 
 
     });
-  
+
+    var colorcat = ["#009900", "#00FF00", "#e7d45c", "#e3a340", "#ec250f", "#d6d6d6"];
+    // https://gis.stackexchange.com/questions/133630/adding-leaflet-legend
+    var legend = L.control({ position: 'bottomright' });
+    legend.onAdd = function () {
+
+        var div = L.DomUtil.create('div', 'info legend');
+        labels = ["<strong>Depth</strong>"];
+        categories = ['-10-10', ' 10-30', ' 30-50', ' 50-70', ' 70-90', '+90'];
+
+        for (var i = 0; i < categories.length; i++) {
+
+            div.innerHTML +=
+                labels.push(
+                    '<li class="circle" text-align: center style="background-color:' + colorcat[i] + '">' + categories[i] + '</li> '
+                );
+
+        }
+        div.innerHTML = '<ul style="list-style-type:none; text-align: center">' + labels.join('') + '</ul>'
+        return div;
+    };
+    legend.addTo(myMap);
+
 
 
   // Create a layer control
